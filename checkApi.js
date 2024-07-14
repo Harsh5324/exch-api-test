@@ -4,7 +4,9 @@ const checkApi = async (req, resp) => {
   try {
     let { data } = await axios.get("http://142.93.36.1/api/v2" + req.body.path);
 
-    data = typeof data[0] === "string" ? JSON.parse(data[0]) : data;
+    if ((data = typeof data[0] === "string")) {
+      data = data.map((item) => JSON.parse(item));
+    }
 
     resp.send(data);
   } catch (err) {
