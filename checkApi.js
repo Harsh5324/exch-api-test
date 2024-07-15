@@ -11,7 +11,7 @@ const checkApi = async (req, resp) => {
     resp.send(data);
   } catch (err) {
     console.log("🚀 ~ file: checkApi.js:5 ~ checkApi ~ err:", err);
-    resp.send(err);
+    resp.fail(err);
   }
 };
 
