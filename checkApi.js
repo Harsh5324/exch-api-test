@@ -8,7 +8,7 @@ const checkApi = async (req, resp) => {
       data = data.map((item) => JSON.parse(item));
     }
 
-    resp.send(data);
+    resp.suc(data);
   } catch (err) {
     console.log("🚀 ~ file: checkApi.js:5 ~ checkApi ~ err:", err);
     resp.fail(err);
