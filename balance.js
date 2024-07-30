@@ -3,7 +3,7 @@ const balance = async (req, resp) => {
     resp.send({
       partnerKey:
         "lEOB6coQW4dCP15QXQwwAGYVtQCpEe09eHv36alfG4ykysWGZ1BLlBHBm9W77XmL",
-      timestamp: Date().now(),
+      timestamp: new Date().now(),
       userId: 1,
       balance: 5000,
       status: {
