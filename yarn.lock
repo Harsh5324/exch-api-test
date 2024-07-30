@@ -513,6 +513,11 @@ type-is@~1.6.18:
     media-typer "0.3.0"
     mime-types "~2.1.24"
 
+unix-timestamp@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/unix-timestamp/-/unix-timestamp-1.0.4.tgz#143fe9c12ebb757365bedd57fc91db65df6b3e88"
+  integrity sha512-xX3UE0wfJLfGPKetHBJaQpz4UfyHQCJAfyEYNiX3SQq2tPrIKInQZvtTUpXV4c2Pd9GfYLHVeEXQ5aVFKTyW3w==
+
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
