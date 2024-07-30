@@ -6,7 +6,7 @@ const balance = async (req, resp) => {
       partnerKey:
         "lEOB6coQW4dCP15QXQwwAGYVtQCpEe09eHv36alfG4ykysWGZ1BLlBHBm9W77XmL",
       timestamp: Math.floor(timestamp.now()),
-      userId: 1,
+      userId: "1",
       balance: 5000,
       status: {
         code: "SUCCESS",
