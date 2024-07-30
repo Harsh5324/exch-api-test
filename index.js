@@ -8,4 +8,4 @@ app.listen(82);
 
 router.post("/", checkApi);
 router.post("/2", casinoApi);
-router.post("/balance", balance);
+router.post("/wco/balance", balance);
