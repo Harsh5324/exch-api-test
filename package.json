@@ -12,6 +12,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "pull": "gip pull && yarn && pm2 restart index.js"
+    "pull": "git pull && yarn && pm2 restart index.js"
   }
 }
