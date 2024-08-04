@@ -1,17 +1,27 @@
 {
-  "dependencies": {
-    "axios": "^1.7.2",
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "harsh-router": "^1.0.0",
-    "unix-timestamp": "^1.0.4"
-  },
-  "name": "api-test",
+  "name": "magicwin",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "pull": "git pull && yarn && pm2 restart index.js"
+    "dev": "npx nodemon start --host",
+    "start": "sudo pm2 start index.js && sudo pm2 start client.js",
+    "restart": "sudo pm2 restart index.js && sudo pm2 restart client.js",
+    "stop": "sudo pm2 stop index.js && sudo pm2 stop client.js",
+    "logs": "sudo pm2 logs",
+    "pull": "git pull && yarn restart",
+    "ssh": "ssh -R 80:localhost:8000 serveo.net"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "harsh-router": "^1.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.10.3",
+    "node-cron": "^3.0.3",
+    "socket.io": "^4.7.5",
+    "unix-timestamp": "^1.0.4"
   }
 }

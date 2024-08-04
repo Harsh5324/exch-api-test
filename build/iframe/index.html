@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home page - ScoreApp</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/site.css" />
+        <script>
+            var type = window.location.href.split("=")[2];
+
+            if (type === "d")
+                document.write(
+                    '<link rel="stylesheet" href="css/theme-dark.css" />'
+                );
+            else
+                document.write(
+                    '<link rel="stylesheet" href="css/theme-light.css" />'
+                );
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid p-0">
+            <main role="main">
+                <div class="sr-widget sr-widget-1"></div>
+            </main>
+        </div>
+
+        <script
+            src="https://widgets.sir.sportradar.com/191c26c3d84e50c54575a9e9714fe116/widgetloader"
+            n="SIR"
+        ></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/site.js"></script>
+        <script src="js/iframeResizer.contentWindow.min.js"></script>
+
+        <script type="text/javascript">
+            (function (a, b, c, d, e, f, g, h, i) {
+                a[e] ||
+                    ((i = a[e] =
+                        function () {
+                            (a[e].q = a[e].q || []).push(arguments);
+                        }),
+                    (i.l = 1 * new Date()),
+                    (i.o = f),
+                    (g = b.createElement(c)),
+                    (h = b.getElementsByTagName(c)[0]),
+                    (g.async = 1),
+                    (g.src = d),
+                    g.setAttribute("n", e),
+                    h.parentNode.insertBefore(g, h));
+            })(
+                window,
+                document,
+                "script",
+                "https://widgets.sir.sportradar.com/191c26c3d84e50c54575a9e9714fe116/widgetloader",
+                "SIR",
+                {
+                    language: "en",
+                    debug: true, // SIR global options
+                }
+            );
+        </script>
+    </body>
+</html>
