@@ -1,4 +1,5 @@
 const timestamp = require("unix-timestamp");
+const getData = require("../../functions/getData");
 
 const balance = async (req, resp) => {
   try {
