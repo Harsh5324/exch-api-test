@@ -18,7 +18,7 @@ const balance = require("./routes/post/balance");
 const debit = require("./routes/post/debit");
 const credit = require("./routes/post/credit");
 
-app.listen(8000);
+app.listen(82);
 
 router.get("/", (_, resp) => resp.send("Hello from server"));
 router.get("/sports", sports);
