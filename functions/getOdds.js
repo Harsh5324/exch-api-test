@@ -21,7 +21,7 @@ const getOdds = async () => {
       new Promise(async (resolve, reject) => {
         try {
           // const { data, msg } = await axios.post(baseURL, { path });
-          const { data } = await axios.get(baseURL + path);
+          let { data } = await axios.get(baseURL + path);
 
           if (typeof data[0] === "string")
             data = data.map((item) => JSON.parse(item));
