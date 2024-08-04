@@ -33,9 +33,9 @@ const playGame = async (req, resp) => {
       }
     );
 
-    if (!data.data.launchURL) return resp.fail("Error while playing game");
+    if (!data.launchURL) return resp.fail("Error while playing game");
 
-    resp.suc({ iframe: data.data.launchURL });
+    resp.suc({ iframe: data.launchURL });
   } catch (err) {
     console.log("🚀 ~ file: playGame.js:5 ~ playGame ~ err:", err);
     resp.fail();

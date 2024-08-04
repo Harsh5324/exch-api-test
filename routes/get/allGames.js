@@ -13,7 +13,7 @@ const allGames = async (req, resp) => {
       }
     );
 
-    if (data.data.games.length === 0) return resp.fail("Invalid provider");
+    if (data.games.length === 0) return resp.fail("Invalid provider");
 
     resp.suc(data.data.games);
   } catch (err) {
