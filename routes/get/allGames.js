@@ -15,7 +15,7 @@ const allGames = async (req, resp) => {
 
     if (data.games.length === 0) return resp.fail("Invalid provider");
 
-    resp.suc(data.data.games);
+    resp.suc(data.games);
   } catch (err) {
     console.log("🚀 ~ file: allGames.js:5 ~ allGames ~ err:", err);
     resp.fail();
