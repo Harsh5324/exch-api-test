@@ -6,7 +6,7 @@ const balance = async (req, resp) => {
 
     let {
       data: [{ balance }],
-    } = await getData("balance", "users", `_id = ${body.user.id}`);
+    } = await getData("balance", "users", `_id = ${body.userId}`);
 
     balance = parseFloat(balance);
 
@@ -14,7 +14,7 @@ const balance = async (req, resp) => {
       partnerKey:
         "lEOB6coQW4dCP15QXQwwAGYVtQCpEe09eHv36alfG4ykysWGZ1BLlBHBm9W77XmL",
       timestamp: Math.floor(timestamp.now()).toString(),
-      userId: body.user.id,
+      userId: body.userId,
       balance,
       status: {
         code: "SUCCESS",
