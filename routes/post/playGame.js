@@ -22,6 +22,7 @@ const playGame = async (req, resp) => {
         game: {
           gameCode: body.code,
           providerCode: body.provider,
+          platform: "desktop",
         },
         timestamp: Math.floor(timestamp.now()).toString(),
         user: {
