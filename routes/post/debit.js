@@ -11,6 +11,8 @@ const debit = async (req, resp) => {
       data: [{ balance }],
     } = await getData("balance", "users", `_id = ${body.user.id}`);
 
+    console.log(body.body.gameData.description);
+
     balance =
       body.gameData.description === "cancel"
         ? parseFloat(balance) + parseFloat(body.transactionData.amount)
