@@ -63,7 +63,9 @@ const getOdds = async () => {
               const matches = await callApi(
                 `/fetch_data?Action=listEvents&EventTypeID=4&CompetitionID=${t.competition.id}`
               );
-              matches.forEach((m) => allMatches.push(m));
+              matches.forEach((m) => {
+                m.event.name.split(" v ").length === 2 && allMatches.push(m);
+              });
               tournaments[tI] = { ...t, matches };
             } catch (err) {
               console.log(
@@ -219,7 +221,9 @@ const getOdds = async () => {
               const matches = await callApi(
                 `/fetch_data?Action=listEvents&EventTypeID=1&CompetitionID=${t.competition.id}`
               );
-              matches.forEach((m) => allMatches.push(m));
+              matches.forEach((m) => {
+                m.event.name.split(" v ").length === 2 && allMatches.push(m);
+              });
               tournaments[tI] = { ...t, matches };
             } catch (err) {
               console.log(
@@ -324,7 +328,9 @@ const getOdds = async () => {
               const matches = await callApi(
                 `/fetch_data?Action=listEvents&EventTypeID=2&CompetitionID=${t.competition.id}`
               );
-              matches.forEach((m) => allMatches.push(m));
+              matches.forEach((m) => {
+                m.event.name.split(" v ").length === 2 && allMatches.push(m);
+              });
               tournaments[tI] = { ...t, matches };
             } catch (err) {
               console.log(
