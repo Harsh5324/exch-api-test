@@ -64,7 +64,7 @@ const getOdds = async () => {
                 `/fetch_data?Action=listEvents&EventTypeID=4&CompetitionID=${t.competition.id}`
               );
               matches.forEach((m) => {
-                m.event.name.split(" v ").length === 2 && allMatches.push(m);
+                if (m.event.name.split(" v ").length === 2) allMatches.push(m);
               });
               tournaments[tI] = { ...t, matches };
             } catch (err) {
@@ -222,7 +222,7 @@ const getOdds = async () => {
                 `/fetch_data?Action=listEvents&EventTypeID=1&CompetitionID=${t.competition.id}`
               );
               matches.forEach((m) => {
-                m.event.name.split(" v ").length === 2 && allMatches.push(m);
+                if (m.event.name.split(" v ").length === 2) allMatches.push(m);
               });
               tournaments[tI] = { ...t, matches };
             } catch (err) {
@@ -329,7 +329,7 @@ const getOdds = async () => {
                 `/fetch_data?Action=listEvents&EventTypeID=2&CompetitionID=${t.competition.id}`
               );
               matches.forEach((m) => {
-                m.event.name.split(" v ").length === 2 && allMatches.push(m);
+                if (m.event.name.split(" v ").length === 2) allMatches.push(m);
               });
               tournaments[tI] = { ...t, matches };
             } catch (err) {
