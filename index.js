@@ -18,6 +18,7 @@ const balance = require("./routes/post/balance");
 const debit = require("./routes/post/debit");
 const credit = require("./routes/post/credit");
 const checkOddsApi = require("./routes/post/checkOddsApi");
+const checkWcoApi = require("./routes/post/checkWcoApi");
 
 app.listen(82);
 
@@ -35,6 +36,7 @@ router.post("/login", login);
 router.post("/add-bet", addBet);
 router.post("/play-game", playGame);
 router.post("/check-odds-api", checkOddsApi);
+router.post("/check-wco-api", checkWcoApi);
 router.post("/wco/balance", balance);
 router.post("/wco/debit", debit);
 router.post("/wco/credit", credit);

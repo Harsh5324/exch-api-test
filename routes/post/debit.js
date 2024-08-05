@@ -26,7 +26,7 @@ const debit = async (req, resp) => {
         balance: 0,
         status: {
           code: "INSUFFICIENT_BALANCE",
-          message: "Inufficient balance",
+          message: "Inufficient Balance",
         },
       });
 
