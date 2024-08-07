@@ -12,11 +12,16 @@ const declareReults = async (sport = 0) => {
     try {
       const eventTypeId = { 0: 4, 1: 1, 2: 2 }[sport];
 
+      console.log(
+        "🚀 ~ file: declareResults.js:15 ~ sessionsResult ~ eventTypeId:",
+        { 0: 4, 1: 1, 2: 2 }[sport]
+      );
       const { data: sessions } = await getData(
         null,
         "bets",
         `sport = ${sport} && status = 0 && type = 'session'`
       );
+      console.log("sessions: ", sessions);
 
       const selectionIds = Object.keys(groupBy(sessions, "selectionId"));
       console.log("selectionIds: ", selectionIds);
