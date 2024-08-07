@@ -97,7 +97,10 @@ const getOdds = async () => {
           })
         );
 
-        oddsMap.set("allCricketMatches", allMatches);
+        oddsMap.set(
+          "allCricketMatches",
+          allMatches.filter((m) => m.event.name.split(" v ").length === 2)
+        );
       }
       // ------------------- update tournaments end ----------------------
 
@@ -255,7 +258,10 @@ const getOdds = async () => {
           })
         );
 
-        oddsMap.set("allFootballMatches", allMatches);
+        oddsMap.set(
+          "allFootballMatches",
+          allMatches.filter((m) => m.event.name.split(" v ").length === 2)
+        );
       }
       // ------------------- update tournaments end ----------------------
 
@@ -362,7 +368,10 @@ const getOdds = async () => {
           })
         );
 
-        oddsMap.set("allTennisMatches", allMatches);
+        oddsMap.set(
+          "allTennisMatches",
+          allMatches.filter((m) => m.event.name.split(" v ").length === 2)
+        );
       }
       // ------------------- update tournaments end ----------------------
 
