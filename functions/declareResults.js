@@ -12,28 +12,22 @@ const declareReults = async (sport = 0) => {
     try {
       const eventTypeId = { 0: 4, 1: 1, 2: 2 }[sport];
 
-      console.log(
-        "🚀 ~ file: declareResults.js:15 ~ sessionsResult ~ eventTypeId:",
-        { 0: 4, 1: 1, 2: 2 }[sport]
-      );
       const { data: sessions } = await getData(
         null,
         "bets",
         `sport = ${sport} && status = 0 && type = 'session'`
       );
-      console.log("sessions: ", sessions);
 
       const selectionIds = Object.keys(groupBy(sessions, "selectionId"));
-      console.log("selectionIds: ", selectionIds);
       const results = [];
       const selectionIdsArr = [];
 
       selectionIds.forEach((item, index) => {
         const arrIndex = Math.floor(index / 25);
-        const marketId = sessions.find((s) => s.selectionId === item).marketId;
-        selectionIdsArr[arrIndex] += !selectionIdsArr[arrIndex]
-          ? `${marketId}_${item}`
-          : `,${marketId}_${item}`;
+        const eventId = sessions.find((s) => s.selectionId === item).eventId;
+        selectionIdsArr[arrIndex] = !selectionIdsArr[arrIndex]
+          ? `${eventId}_${item}`
+          : `${selectionIdsArr[arrIndex]},${eventId}_${item}`;
       });
 
       await Promise.all(
