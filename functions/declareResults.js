@@ -71,6 +71,8 @@ const declareReults = async (sport = 0) => {
             },
             "bets"
           );
+
+          await addData({ _id: bet.user, balance }, "users");
         }
       }
     } catch (err) {
