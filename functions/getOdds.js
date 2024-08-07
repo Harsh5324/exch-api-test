@@ -2,6 +2,7 @@ const { default: axios } = require("axios");
 const nodeCron = require("node-cron");
 
 const { oddsMap } = require("./map");
+const { sportApiBaseURL } = require("../config");
 
 const timing = {
   tournaments: 60,
@@ -13,25 +14,22 @@ Object.keys(timing).forEach((item) => {
   timing[item] = timing[item] * 1000;
 });
 
+const callApi = (path) =>
+  new Promise(async (resolve, reject) => {
+    try {
+      let { data } = await axios.get(sportApiBaseURL + path);
+
+      if (typeof data[0] === "string")
+        data = data.map((item) => JSON.parse(item));
+
+      resolve(data);
+    } catch (err) {
+      reject("Something went wrong");
+    }
+  });
+
 const getOdds = async () => {
   try {
-    const baseURL = "http://84.8.153.51/api/v2";
-
-    const callApi = (path) =>
-      new Promise(async (resolve, reject) => {
-        try {
-          // const { data, msg } = await axios.post(baseURL, { path });
-          let { data } = await axios.get(baseURL + path);
-
-          if (typeof data[0] === "string")
-            data = data.map((item) => JSON.parse(item));
-
-          resolve(data);
-        } catch (err) {
-          reject("Something went wrong");
-        }
-      });
-
     const cricket = async () => {
       const currentTime = new Date();
 

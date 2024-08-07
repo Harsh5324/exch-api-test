@@ -19,6 +19,7 @@ const debit = require("./routes/post/debit");
 const credit = require("./routes/post/credit");
 const checkOddsApi = require("./routes/post/checkOddsApi");
 const checkWcoApi = require("./routes/post/checkWcoApi");
+const declareReults = require("./functions/declareResults");
 
 app.listen(82);
 
@@ -42,3 +43,4 @@ router.post("/wco/debit", debit);
 router.post("/wco/credit", credit);
 
 getOdds();
+declareReults();

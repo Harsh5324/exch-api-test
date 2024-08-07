@@ -19,6 +19,7 @@
     "express": "^4.19.2",
     "harsh-router": "^1.0.0",
     "jsonwebtoken": "^9.0.2",
+    "lodash.groupby": "^4.6.0",
     "mysql2": "^3.10.3",
     "node-cron": "^3.0.3",
     "socket.io": "^4.7.5",
