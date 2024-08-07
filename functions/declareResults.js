@@ -81,7 +81,7 @@ const declareReults = async (sport = 0) => {
     }
   };
 
-  cron.schedule(`*/${sport + 5}  * * * *`, () => {
+  cron.schedule(`*/${sport + 5} * * * *`, () => {
     sessionsResult();
   });
   sessionsResult();
