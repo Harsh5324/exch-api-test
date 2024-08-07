@@ -65,12 +65,7 @@ const getOdds = async () => {
                 if (m.event.name.split(" v ").length === 2) allMatches.push(m);
               });
               tournaments[tI] = { ...t, matches };
-            } catch (err) {
-              console.log(
-                "🚀 ~ file: getOdds.js:52 ~ tournaments.map ~ err:",
-                err
-              );
-            }
+            } catch (err) {}
           })
         );
 
@@ -86,12 +81,7 @@ const getOdds = async () => {
                 `/getMarkets?EventTypeID=4&EventID=${m.event.id}`
               );
               allMatches[mI].marketId = marketId;
-            } catch (err) {
-              console.log(
-                "🚀 ~ file: getOdds.js:73 ~ allMatches.map ~ err:",
-                err
-              );
-            }
+            } catch (err) {}
           })
         );
 
@@ -226,12 +216,7 @@ const getOdds = async () => {
                 if (m.event.name.split(" v ").length === 2) allMatches.push(m);
               });
               tournaments[tI] = { ...t, matches };
-            } catch (err) {
-              console.log(
-                "🚀 ~ file: getOdds.js:52 ~ tournaments.map ~ err:",
-                err
-              );
-            }
+            } catch (err) {}
           })
         );
 
@@ -247,12 +232,7 @@ const getOdds = async () => {
                 `/getMarkets?EventTypeID=1&EventID=${m.event.id}`
               );
               allMatches[mI].markets = markets;
-            } catch (err) {
-              console.log(
-                "🚀 ~ file: getOdds.js:73 ~ allMatches.map ~ err:",
-                err
-              );
-            }
+            } catch (err) {}
           })
         );
 
@@ -285,12 +265,7 @@ const getOdds = async () => {
                 `/getMarketsOdds?EventTypeID=1&marketId=${markets}`
               );
               matchesOds = [...odds, ...matchesOds];
-            } catch (err) {
-              console.log(
-                "🚀 ~ file: getOdds.js:273 ~ allFootballMatches.map ~ err:",
-                err
-              );
-            }
+            } catch (err) {}
           })
         );
 
@@ -336,12 +311,7 @@ const getOdds = async () => {
                 if (m.event.name.split(" v ").length === 2) allMatches.push(m);
               });
               tournaments[tI] = { ...t, matches };
-            } catch (err) {
-              console.log(
-                "🚀 ~ file: getOdds.js:52 ~ tournaments.map ~ err:",
-                err
-              );
-            }
+            } catch (err) {}
           })
         );
 
@@ -357,12 +327,7 @@ const getOdds = async () => {
                 `/getMarkets?EventTypeID=2&EventID=${m.event.id}`
               );
               allMatches[mI].markets = markets;
-            } catch (err) {
-              console.log(
-                "🚀 ~ file: getOdds.js:73 ~ allMatches.map ~ err:",
-                err
-              );
-            }
+            } catch (err) {}
           })
         );
 
@@ -395,12 +360,7 @@ const getOdds = async () => {
                 `/getMarketsOdds?EventTypeID=2&marketId=${markets}`
               );
               matchesOds = [...odds, ...matchesOds];
-            } catch (err) {
-              console.log(
-                "🚀 ~ file: getOdds.js:273 ~ allTennisMatches.map ~ err:",
-                err
-              );
-            }
+            } catch (err) {}
           })
         );
 
