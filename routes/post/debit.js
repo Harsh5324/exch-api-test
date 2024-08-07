@@ -16,7 +16,19 @@ const debit = async (req, resp) => {
         ? parseFloat(balance) + parseFloat(body.transactionData.amount)
         : parseFloat(balance) - parseFloat(body.transactionData.amount);
 
-    if (balance >= 0) await addData({ balance, _id: body.user.id }, "users");
+    if (balance < 0)
+      return resp.send({
+        partnerKey: null,
+        timestamp: null,
+        userId: null,
+        balance: 0,
+        status: {
+          code: "INSUFFICIENT_BALANCE",
+          message: "Inufficient Balance",
+        },
+      });
+
+    await addData({ balance, _id: body.user.id }, "users");
 
     resp.send({
       partnerKey:
