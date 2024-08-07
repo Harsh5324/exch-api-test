@@ -19,6 +19,7 @@ const declareReults = async (sport = 0) => {
       );
 
       const selectionIds = Object.keys(groupBy(sessions, "selectionId"));
+      console.log("selectionIds: ", selectionIds);
       const results = [];
       const selectionIdsArr = [];
 
@@ -33,6 +34,7 @@ const declareReults = async (sport = 0) => {
       await Promise.all(
         selectionIdsArr.map(async (selectionIds) => {
           try {
+            console.log("selectionIds: ", selectionIds);
             const { data } = await axios.get(
               `${sportApiBaseURL}/sessionsResults?EventTypeID=${eventTypeId}&marketId=${selectionIds}`
             );
@@ -80,7 +82,7 @@ const declareReults = async (sport = 0) => {
     }
   };
 
-  cron.schedule(`*/5 * * * * *`, () => {
+  cron.schedule(`*/${sport + 5}  * * * *`, () => {
     sessionsResult();
   });
   sessionsResult();
