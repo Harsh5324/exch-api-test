@@ -11,26 +11,12 @@ const debit = async (req, resp) => {
       data: [{ balance }],
     } = await getData("balance", "users", `_id = ${body.user.id}`);
 
-    console.log(body.gameData.description);
-
     balance =
       body.gameData.description === "cancel"
         ? parseFloat(balance) + parseFloat(body.transactionData.amount)
         : parseFloat(balance) - parseFloat(body.transactionData.amount);
 
-    if (balance < 0)
-      return resp.send({
-        partnerKey: null,
-        timestamp: null,
-        userId: null,
-        balance: 0,
-        status: {
-          code: "INSUFFICIENT_BALANCE",
-          message: "Inufficient Balance",
-        },
-      });
-
-    await addData({ balance, _id: body.user.id }, "users");
+    if (balance >= 0) await addData({ balance, _id: body.user.id }, "users");
 
     resp.send({
       partnerKey:
