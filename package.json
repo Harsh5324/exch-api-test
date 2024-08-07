@@ -10,7 +10,7 @@
     "restart": "sudo pm2 restart index.js && sudo pm2 restart client.js",
     "stop": "sudo pm2 stop index.js && sudo pm2 stop client.js",
     "logs": "sudo pm2 logs",
-    "pull": "git pull && yarn restart",
+    "pull": "git pull && yarn && yarn restart",
     "ssh": "ssh -R 80:localhost:8000 serveo.net"
   },
   "dependencies": {
