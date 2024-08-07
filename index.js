@@ -44,3 +44,5 @@ router.post("/wco/credit", credit);
 
 getOdds();
 declareReults();
+declareReults(1);
+declareReults(2);
