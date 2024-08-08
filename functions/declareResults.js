@@ -61,7 +61,7 @@ const declareReults = async (sport = 0) => {
           let {
             data: [{ balance }],
           } = await getData("balance", "users", `_id = ${bet.user}`);
-
+          balance = parseFloat(balance);
           balance = status
             ? balance + parseFloat(bet.amount) * parseFloat(bet.x)
             : balance;
@@ -134,7 +134,6 @@ const declareReults = async (sport = 0) => {
           let {
             data: [{ balance }],
           } = await getData("balance", "users", `_id = ${bet.user}`);
-
           balance = parseFloat(balance);
           balance = status
             ? balance + parseFloat(bet.amount) * parseFloat(bet.x)
@@ -208,7 +207,6 @@ const declareReults = async (sport = 0) => {
           let {
             data: [{ balance }],
           } = await getData("balance", "users", `_id = ${bet.user}`);
-
           balance = parseFloat(balance);
           balance = status
             ? balance + parseFloat(bet.amount) * parseFloat(bet.x)
@@ -238,7 +236,7 @@ const declareReults = async (sport = 0) => {
 
   cron.schedule(`*/${sport + 7} * * * *`, () => {
     oddsResults();
-    bookmakersResults();
+    if (sport == 0) bookmakersResults();
   });
 };
 
