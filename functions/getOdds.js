@@ -254,8 +254,6 @@ const getOdds = async () => {
                 markets += `${index === 0 ? "" : ","}${item.marketId}`;
               });
 
-              console.log("markets: ", markets);
-
               const odds = await callApi(
                 `/getMarketsOdds?EventTypeID=1&marketId=${markets}`
               );

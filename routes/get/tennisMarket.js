@@ -6,17 +6,17 @@ const tennisMarket = async (req, resp) => {
 
     const allTennisMatches = oddsMap.get("allTennisMatches");
 
-    if (!allTennisMatches.find((data) => data && data.event.id === matchId))
+    if (!allTennisMatches.find((data) => data && data.event.id == matchId))
       return resp.fail("Match not found");
 
     const { data: tennisMatchOds } = oddsMap.get("tennisOds");
 
     const odds = tennisMatchOds.filter(
-      (data) => data && data.eventid === matchId
+      (data) => data && data.eventid == matchId
     );
 
     const scoreId = allTennisMatches.find(
-      (data) => data && data.event.id === matchId
+      (data) => data && data.event.id == matchId
     ).scoreboard_id;
 
     const iframe = scoreId ? `https://lmt.ss8055.com/?Id=${scoreId}&t=d` : null;

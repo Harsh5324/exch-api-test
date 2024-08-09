@@ -20,17 +20,17 @@ const market = async (req, resp) => {
     const { data: cricketMatchOds } = oddsMap.get("cricketOds");
 
     const odds = cricketMatchOds.filter(
-      (data) => data && data.eventid === matchId
+      (data) => data && data.eventid == matchId
     );
 
     const { data: cricketBookmakers } = oddsMap.get("cricketBookmakers");
 
     const bookmakers = cricketBookmakers.filter(
-      (data) => data && data.evid === matchId
+      (data) => data && data.evid == matchId
     );
 
     const scoreId = allCricketMatches.find(
-      (data) => data && data.event.id === matchId
+      (data) => data && data.event.id == matchId
     ).scoreboard_id;
 
     const iframe = scoreId ? `https://lmt.ss8055.com/?Id=${scoreId}&t=d` : null;
