@@ -12,11 +12,11 @@ const footballmarket = async (req, resp) => {
     const { data: footballMatchOds } = oddsMap.get("footballOds");
 
     const odds = footballMatchOds.filter(
-      (data) => data && data.eventid === matchId
+      (data) => data && data.eventid == matchId
     );
 
     const scoreId = allFootballMatches.find(
-      (data) => data && data.event.id === matchId
+      (data) => data && data.event.id == matchId
     ).scoreboard_id;
 
     const iframe = scoreId ? `https://lmt.ss8055.com/?Id=${scoreId}&t=d` : null;
