@@ -62,7 +62,7 @@ const getOdds = async () => {
                 `/fetch_data?Action=listEvents&EventTypeID=4&CompetitionID=${t.competition.id}`
               );
               matches.forEach((m) => {
-                if (m.event.name.split(" v ").length === 2) allMatches.push(m);
+                allMatches.push(m);
               });
               tournaments[tI] = { ...t, matches };
             } catch (err) {}
@@ -85,10 +85,7 @@ const getOdds = async () => {
           })
         );
 
-        oddsMap.set(
-          "allCricketMatches",
-          allMatches.filter((m) => m.event.name.split(" v ").length === 2)
-        );
+        oddsMap.set("allCricketMatches", allMatches);
       }
       // ------------------- update tournaments end ----------------------
 
@@ -212,7 +209,7 @@ const getOdds = async () => {
                 `/fetch_data?Action=listEvents&EventTypeID=1&CompetitionID=${t.competition.id}`
               );
               matches.forEach((m) => {
-                if (m.event.name.split(" v ").length === 2) allMatches.push(m);
+                allMatches.push(m);
               });
               tournaments[tI] = { ...t, matches };
             } catch (err) {}
@@ -235,10 +232,7 @@ const getOdds = async () => {
           })
         );
 
-        oddsMap.set(
-          "allFootballMatches",
-          allMatches.filter((m) => m.event.name.split(" v ").length === 2)
-        );
+        oddsMap.set("allFootballMatches", allMatches);
       }
       // ------------------- update tournaments end ----------------------
 
@@ -307,7 +301,7 @@ const getOdds = async () => {
                 `/fetch_data?Action=listEvents&EventTypeID=2&CompetitionID=${t.competition.id}`
               );
               matches.forEach((m) => {
-                if (m.event.name.split(" v ").length === 2) allMatches.push(m);
+                allMatches.push(m);
               });
               tournaments[tI] = { ...t, matches };
             } catch (err) {}
@@ -330,10 +324,7 @@ const getOdds = async () => {
           })
         );
 
-        oddsMap.set(
-          "allTennisMatches",
-          allMatches.filter((m) => m.event.name.split(" v ").length === 2)
-        );
+        oddsMap.set("allTennisMatches", allMatches);
       }
       // ------------------- update tournaments end ----------------------
 
