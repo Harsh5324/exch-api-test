@@ -187,7 +187,6 @@ const getOdds = async () => {
       const footballTournaments = oddsMap.get("footballTournaments");
       const allFootballMatches = oddsMap.get("allFootballMatches");
       const footballMatchOds = oddsMap.get("footballOds");
-      const footballMatchBookmakers = oddsMap.get("footballBookmakers");
 
       // -------------------- update tournaments -------------------------
       if (
@@ -260,6 +259,11 @@ const getOdds = async () => {
               m.markets.forEach((item, index) => {
                 markets += `${index === 0 ? "" : ","}${item.marketId}`;
               });
+
+              console.log(
+                "football markets: ",
+                `/getMarketsOdds?EventTypeID=1&marketId=${markets}`
+              );
 
               const odds = await callApi(
                 `/getMarketsOdds?EventTypeID=1&marketId=${markets}`
